@@ -1,7 +1,7 @@
 $(document).ready(intiApp);
 var gameBoardArray = [];
 var divNum; // the number that represents the disc_container  
-var boxNum;
+var boxNum = 0;
 var clickTime = 0;
 
 
@@ -15,35 +15,60 @@ function intiApp(){
 	$('#36').off('click');
 }
 
-
-
 function create_board(){
-	for(var i = 0; i <64; i++ ){
-		gameBoardArray.push(0);
-		console.log(gameBoardArray);
-		boxNum = i+1;
-		var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
-		disc_container.text(boxNum);
-  
+	for(var nestedArr = 0; nestedArr < 8; nestedArr++ ){
+		var nestedArrSet  = [];
+        gameBoardArray.push(nestedArrSet);
+		for(var arrIterm = 0; arrIterm < 8; arrIterm++){
+			nestedArrSet.push(0);
+			boxNum += 1;
+			var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
+      		disc_container.text(boxNum);
+
 		}
-
-    $('<div>', {class: 'transparent_disc black'}).appendTo('#28');
-    gameBoardArray[28-1] = 2
-    $('#28').off('click');
+	}
+	$('<div>', {class: 'transparent_disc black'}).appendTo('#28');
+    gameBoardArray[3][3] = 2
+    // $('#28').off('click');
     $('<div>', {class: 'transparent_disc black'}).appendTo('#37');
-    gameBoardArray[37-1] = 2
-    $('#37').off('click');
+    gameBoardArray[4][4] = 2
+    // $('#37').off('click');
     $('<div>', {class: 'transparent_disc white'}).appendTo('#29');
-    gameBoardArray[29-1] = 1
-    $('#29').off('click');
+    gameBoardArray[3][4] = 1
+    // $('#29').off('click');
     $('<div>', {class: 'transparent_disc white'}).appendTo('#36');
-    gameBoardArray[36-1] = 1
-    $('#36').off('click');
-
-
-     console.log(gameBoardArray); 
-
+    gameBoardArray[4][3] = 1;
+    // $('#36').off('click');
+  	console.log(gameBoardArray);
 }
+
+// function create_board(){
+// 	for(var i = 0; i <64; i++ ){
+// 		// gameBoardArray.push(0);
+// 		console.log(gameBoardArray);
+// 		boxNum = i+1;
+// 		var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
+// 		disc_container.text(boxNum);
+  
+// 		}
+
+//     $('<div>', {class: 'transparent_disc black'}).appendTo('#28');
+//     gameBoardArray[28-1] = 2
+//     // $('#28').off('click');
+//     $('<div>', {class: 'transparent_disc black'}).appendTo('#37');
+//     gameBoardArray[37-1] = 2
+//     // $('#37').off('click');
+//     $('<div>', {class: 'transparent_disc white'}).appendTo('#29');
+//     gameBoardArray[29-1] = 1
+//     // $('#29').off('click');
+//     $('<div>', {class: 'transparent_disc white'}).appendTo('#36');
+//     gameBoardArray[36-1] = 1
+//     // $('#36').off('click');
+
+
+//      console.log(gameBoardArray); 
+
+// }
 
 function box_click(){ // box_click is when game stars
 
