@@ -73,12 +73,20 @@ function box_click(){ // box_click is when game stars
 }
 
 function horizontalClick(num){
+	for( var arrayIndex=0 ; arrayIindex<8; arrayIndex++){
+		if(gameBoardArray[arrayIndex]=2){
+			if(gameBoardArray[arrayIndex+1] !== 2 && gameBoardArray[arrayIndex+1] === 1){
+				arrayIndex+2// we want to move over 2 from the current position of that player 
+			} else if (gameBoardArray[arrayIndex+1] === 0 && ){ 
+				//break
+			}
+		}
       
+	}
 }
 
 function verticalClick(){
 
 }
-
 
 
