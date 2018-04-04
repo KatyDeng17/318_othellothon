@@ -15,62 +15,75 @@ function intiApp(){
 	$('#36').off('click');
 }
 
-
-
 function create_board(){
-	for(var i = 0; i <64; i++ ){
-		gameBoardArray.push(0);
-		console.log(gameBoardArray);
-		boxNum = i+1;
-		var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
-		disc_container.text(boxNum);
+	for(var nestedArr = 0; nestedArr < 8; nestedArr++ ){
+		var nestedArrSet  = [];
+        gameBoardArray.push(nestedArrSet);
+		for(var arrIterm = 0; arrIterm < 8; arrIterm++){
+			nestedArrSet.push(0);
+			boxNum = (arrIterm+1) * (nestedArr+1);
+			var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
+      		disc_container.text(boxNum);
+
+		}
+	}
+  console.log(gameBoardArray);
+}
+
+// function create_board(){
+// 	for(var i = 0; i <64; i++ ){
+// 		// gameBoardArray.push(0);
+// 		console.log(gameBoardArray);
+// 		boxNum = i+1;
+// 		var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
+// 		disc_container.text(boxNum);
   
-		}
+// 		}
 
-    $('<div>', {class: 'transparent_disc black'}).appendTo('#28');
-    gameBoardArray[28-1] = 2
-    $('#28').off('click');
-    $('<div>', {class: 'transparent_disc black'}).appendTo('#37');
-    gameBoardArray[37-1] = 2
-    $('#37').off('click');
-    $('<div>', {class: 'transparent_disc white'}).appendTo('#29');
-    gameBoardArray[29-1] = 1
-    $('#29').off('click');
-    $('<div>', {class: 'transparent_disc white'}).appendTo('#36');
-    gameBoardArray[36-1] = 1
-    $('#36').off('click');
-
-
-     console.log(gameBoardArray); 
-
-}
-
-function box_click(){ // box_click is when game stars
+//     $('<div>', {class: 'transparent_disc black'}).appendTo('#28');
+//     gameBoardArray[28-1] = 2
+//     // $('#28').off('click');
+//     $('<div>', {class: 'transparent_disc black'}).appendTo('#37');
+//     gameBoardArray[37-1] = 2
+//     // $('#37').off('click');
+//     $('<div>', {class: 'transparent_disc white'}).appendTo('#29');
+//     gameBoardArray[29-1] = 1
+//     // $('#29').off('click');
+//     $('<div>', {class: 'transparent_disc white'}).appendTo('#36');
+//     gameBoardArray[36-1] = 1
+//     // $('#36').off('click');
 
 
-		if(clickTime % 2 === 0 && clickTime < 60){
-			divNum = $(this).data('boxNumber');
-			$('<div>', {class: 'transparent_disc black'}).appendTo(this);
-			clickTime++;
-			gameBoardArray[divNum-1] = 2
+//      console.log(gameBoardArray); 
 
-			$(this).off('click');       //disables click after black disc is formed 
+// }
+
+// function box_click(){ // box_click is when game stars
 
 
-		}else{
-			if(clickTime < 60){
-			divNum = $(this).data('boxNumber');
-			$('<div>', {class: 'transparent_disc white'}).appendTo(this);
-			}
-			clickTime++;
-			gameBoardArray[divNum-1] = 1
-			$(this).off('click');        //disables click after white disc is formed
-		}
+// 		if(clickTime % 2 === 0 && clickTime < 60){
+// 			divNum = $(this).data('boxNumber');
+// 			$('<div>', {class: 'transparent_disc black'}).appendTo(this);
+// 			clickTime++;
+// 			gameBoardArray[divNum-1] = 2
+
+// 			$(this).off('click');       //disables click after black disc is formed 
+
+
+// 		}else{
+// 			if(clickTime < 60){
+// 			divNum = $(this).data('boxNumber');
+// 			$('<div>', {class: 'transparent_disc white'}).appendTo(this);
+// 			}
+// 			clickTime++;
+// 			gameBoardArray[divNum-1] = 1
+// 			$(this).off('click');        //disables click after white disc is formed
+// 		}
 	
-	// var disc = $(this).addClass('black');
-	console.log(divNum);
-	console.log(gameBoardArray)
-}
+// 	// var disc = $(this).addClass('black');
+// 	console.log(divNum);
+// 	console.log(gameBoardArray)
+// }
 
 function horizontalClick(num){
       
