@@ -54,7 +54,7 @@ function box_click(){ // box_click is when game stars
 			clickTime++;
 			gameBoardArray[divNum-1] = 2
 
-			$(this).off('click');
+			$(this).off('click');       //disables click after black disc is formed 
 
 
 		}else{
@@ -64,6 +64,7 @@ function box_click(){ // box_click is when game stars
 			}
 			clickTime++;
 			gameBoardArray[divNum-1] = 1
+			$(this).off('click');        //disables click after white disc is formed
 		}
 	
 	// var disc = $(this).addClass('black');
