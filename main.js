@@ -20,6 +20,7 @@ function intiApp(){
 function create_board(){
 	for(var i = 0; i <64; i++ ){
 		gameBoardArray.push(0);
+		console.log(gameBoardArray);
 		boxNum = i+1;
 		var disc_container = $('<div>', {class: 'disc_container', id: boxNum }).appendTo('#game-area').data('boxNumber', boxNum );
 		disc_container.text(boxNum);
@@ -53,6 +54,8 @@ function box_click(){ // box_click is when game stars
 			clickTime++;
 			gameBoardArray[divNum-1] = 2
 
+			$(this).off('click');       //disables click after black disc is formed 
+
 
 		}else{
 			if(clickTime < 60){
@@ -61,6 +64,7 @@ function box_click(){ // box_click is when game stars
 			}
 			clickTime++;
 			gameBoardArray[divNum-1] = 1
+			$(this).off('click');        //disables click after white disc is formed
 		}
 	
 	// var disc = $(this).addClass('black');
