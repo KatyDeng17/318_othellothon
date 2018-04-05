@@ -1,4 +1,138 @@
 body {
     height: 100vh;
     width: 100vw;
+    display:flex;
+    flex-direction: column;
+    
+    /*--background-image: url(images/rilakkumaCookiesBed.gif);*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:lightpink;
 }
+
+/* wire Frame*/
+.header{
+    height:20%;
+    width:100%;
+    border:blueviolet 1px solid;
+    margin: 0;
+    }
+
+.gameSpace {
+    height:80%;
+    width:100%;
+    border: 2px solid lavender;
+    display: flex;
+    margin: 0;
+}
+    
+.gameBoardArea {
+    height: 100%;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color:paleturquoise;
+}
+
+#game-area{
+    width: 90%; 
+    height: 90%; 
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    border:  1px solid yellow; 
+    box-sizing: border-box;
+}
+
+.disc_container{
+    width: 12.5%; 
+    height: 12.5%;
+    border: 1px solid blue; 
+    box-sizing: border-box;
+    display: flex;
+}
+
+.transparent_disc{
+    width: 70%;
+    height: 70%; 
+    background-color: pink;
+    border-radius: 100%;
+    margin: auto;	
+}
+
+.black{
+    background-color: black;
+    
+}
+.green{
+    background-color: green;
+}
+
+.scoreArea{
+    border: black 1px solid;
+    height:100%;
+    width:20%;
+    background-color:gray;
+    display:flex;
+    flex-direction: column;
+}
+
+.playerTurn{
+border: purple 2px solid;
+height:33%;
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items: center;
+}
+
+.playerImg{
+border: lawngreen 2px solid;
+height:70%;
+width:80%;
+}
+
+.playerUp{
+border: khaki 2px solid;
+height:20%;
+width:80%;
+}
+
+.playerOne{
+border: orange 2px solid;
+height:33%;
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items: center;
+
+}
+
+.playerTwo{
+border: gold 2px solid;
+height:33%;
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items: center;
+}
+
+.playerPic{
+border: purple 2px solid;
+height:70%;
+width:80%;
+}
+
+.score{
+border:green 2px solid;
+height:20%;
+width:80%;
+}
+
+
+
