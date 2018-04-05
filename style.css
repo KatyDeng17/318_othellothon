@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     width: 100vw;
+    margin: 0;
     display:flex;
     flex-direction: column;
     background-image: url(gudetama/gudetamaBG.jpg);
@@ -9,9 +14,7 @@ body {
     background-position: center;
 }
 
-* {
-    box-sizing: border-box;
-}
+
 /* wire Frame*/
 .header{
     height:20%;
@@ -35,9 +38,9 @@ body {
     }
 
 .firstTitle, .secondTitle {
-        height: 100%;
-        width: 50%;
-        margin: 0;
+    height: 100%;
+    width: 50%;
+    margin: 0;
     }
 
 .gameSpace {
@@ -53,7 +56,7 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
-    /* opacity: .80; */
+   
 }
 
 #game-area{
@@ -62,8 +65,9 @@ body {
     margin: 0;
     display: flex;
     flex-flow: row wrap;
-    border:  1px solid yellow; 
-    /* background-color: lavender; */
+    border:  1px solid #FFFF99; 
+    background:white; 
+    background: linear-gradient( rgb(253,222,63), white);
 }
 
 .disc_container{
@@ -73,7 +77,6 @@ body {
     border-radius:10%;
     display: flex;
     position: relative;
-    opacity:0.5;
 }
 
 .transparent_disc{
@@ -86,12 +89,17 @@ body {
     left: 64px;
 }
 
+
 .black{
-    background-color: black;
+background-color: black; 
+background-image: url('gudetama/gudetamaToast.png');  
 }
 
 .green{
-    background-color: green;
+background-color: green; 
+background-size: 40%;
+background-repeat:no-repeat;
+background-position:center;
 }
 
 .scoreArea{
@@ -124,6 +132,7 @@ height:20%;
 width:80%;
 text-align: center;
 font-family:"comfortaa";
+font-size: 5em;
 }
 
 .playerOne{
@@ -186,6 +195,11 @@ justify-content:center;
 align-items: center;
 }
 
+.resetSpace:hover{
+padding-top:5px;
+padding-bottom:5px;
+}
+
 button{
 height: 50%;
 width:50%;
@@ -195,11 +209,15 @@ font-size: 5em;
 color: black;
 border: black 8px solid;
 border-radius:10%;
-box-shadow: slategrey 5px 10px;;
+box-shadow: slategrey 5px 10px;
 }
+
+
 
 @font-face {
     font-family: "comfortaa";
     src: url("images/comfortaa.bold.ttf");
 }
+
+
 
