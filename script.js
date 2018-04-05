@@ -104,12 +104,16 @@ function boxClick(){
     if(playerTurn === 'player1'){
     	///step 5
     	horizontalRight(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
-    	horizontalLeft(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green')
+    	horizontalLeft(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
+    	verticalUp(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green')
     	clickTime++;
 
     }else{
       playerTurn === 'player2'
           	horizontalRight(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
+          	horizontalLeft(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black')
+          	verticalUp(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black')
+
           	clickTime++;
 
     }
@@ -201,7 +205,44 @@ function horizontalLeft(element, playerValueInGBA, playerColor,addClass, removeC
 }
 
 
+function verticalUp(element, playerValueInGBA, playerColor,addClass, removeClass){ //GBA = gameBoardArray
+      	getConatinerRowAndCol(element);
+    	var changableDiscForPlayer = [];
+    	var changableBoxLocationInGBA =[];
+    	for(var i = 1; i < containerRow ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
+    		if(gameBoardArray[containerRow-i][containerCol] !== playerValueInGBA && gameBoardArray[containerRow-i][containerCol] !== emty_splace){ // i =1
+       			changableDiscForPlayer.push(boardTokenArray[containerRow-i][containerCol]);
+                changableBoxLocationInGBA.push(containerRow-i);
+                changableBoxLocationInGBA.push(containerCol);
+               
+                }else{
+                	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow-i][containerCol] === playerValueInGBA){
+                		$(element).css("border-color",'pink');
+                		makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
+                		for(var j = 0; j < changableDiscForPlayer.length; j++){
+                			changableDiscForPlayer[j].find('.transparent_disc').addClass(addClass).removeClass(removeClass);
+                			console.log(changableBoxLocationInGBA);
+                			for(var z = 0; z < changableBoxLocationInGBA.length/2; z++){
+                				    var row = changableBoxLocationInGBA[z];
+                				    var col = changableBoxLocationInGBA[z+1];
+                				    changableBoxLocationInGBA.splice(0,2); 
+                				    z--;
 
+              						gameBoardArray[row][col] = playerValueInGBA
+
+              					    console.log(gameBoardArray)
+    						}
+    						gameBoardArray[containerRow][containerCol] = playerValueInGBA;	
+                		}
+                	
+
+                	}
+    			//keep looking 
+    			return;
+
+    		}
+    	}
+}
 
 
 
