@@ -6,26 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='style.css'>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="script.js"></script>
     <title>Rilakkuma Reversi</title>
 </head>
 <body>
    <div class="header">Rilakkuma Reversi!</div>
-   <div class="scoreArea">
-       <div class="playerTurn">
-           <div class="playerImg"></div>
-           <div class="playerUp"></div>
-       </div>
-       <div class="playerOne">
-            <div class="playerPic"></div>
-            <div class="name"></div>
-       </div>
-       <div class="playerTwo">
-            <div class="playerPic"></div>
-            <div class="name"></div>
-       </div>
+    <div class="gameSpace">
+        <div class="scoreArea">
+            <div class="playerTurn">
+                <div class="playerImg"></div>
+                <div class="playerUp"></div>
+            </div>
+            <div class="playerOne">
+                <div class="playerPic"></div>
+                <div class="score"></div>
+            </div>
+            <div class="playerTwo">
+                <div class="playerPic"></div>
+                <div class="score"></div>
+            </div>
+        </div>
+        <div class="gameBoardArea">
+            <div id="game-area"></div>
+        </div> 
    </div>
-   <div class="gameArea">
-       <div class="gameBoard"></div>
-   </div> 
 </body>
 </html>
