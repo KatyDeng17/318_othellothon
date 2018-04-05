@@ -27,7 +27,7 @@ function intiApp(){
 	// definePlayerTurn();
 	// // checkBoxReliability();
 	$('.disc_container').click(boxClick);
-	$('.disc_container').on('click', horizontalClickRight);// box_click is when game stars
+	// $('.disc_container').on('click', horizontalClickRight);// box_click is when game stars
 
 }
 //step 1: 
@@ -104,34 +104,8 @@ function boxClick(){
     if(playerTurn === 'player1'){
     	///step 5
     	horizontalRight(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
+    	horizontalLeft(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green')
     	clickTime++;
-    	// getConatinerRowAndCol(this);
-    	// currentBoxLocationInGameBoardArray = gameBoardArray[containerRow][containerCol];//box location that player clicked 
-    	// var changablediscForPlayer = [];
-    	// for(var i = 1; i < (8-containerCol); i ++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
-    	// 	if(gameBoardArray[containerRow][containerCol+i] !== player1_color_value_in_gameBoardArray && gameBoardArray[containerRow][containerCol+i] !== emty_splace){ // i =1
-     //   			// var changablediscForPlayer1 = [];
-     //   			changablediscForPlayer.push(boardTokenArray[containerRow][containerCol+i]);
-     //            // if(gameBoardArray[containerRow][containerCol+i] !== player1_color_value_in_gameBoardArray){
-     //            // 	$(this).css("border-color",'pink');
-     //            console.log(changablediscForPlayer);
-     //            // if(changablediscForPlayer1.length >0 && )
-     //            }else{
-     //            	if(changablediscForPlayer.length >0 && gameBoardArray[containerRow][containerCol+i] === player1_color_value_in_gameBoardArray){
-     //            		$(this).css("border-color",'pink');
-     //            		makeToken(player1_color).appendTo(this); // place the disc of black color in the box;
-     //            		for(var j = 0; j < changablediscForPlayer.length; j++){
-     //            			changablediscForPlayer[j].find('.transparent_disc').addClass('black').removeClass('green');
-     //            		}
-                	
-
-     //            	}
-    	// 		//keep looking 
-    	// 		return;
-
-    	// 	}
-    	
-    	// }
 
     }else{
       playerTurn === 'player2'
@@ -149,27 +123,33 @@ function getConatinerRowAndCol(element){
 //step 6
 function horizontalRight(element, playerValueInGBA, playerColor,addClass, removeClass){ //GBA = gameBoardArray
       	getConatinerRowAndCol(element);
-    	// currentBoxLocationInGameBoardArray = gameBoardArray[containerRow][containerCol];//box location that player clicked 
-    	var changablediscForPlayer = [];
-    	var changableBoxValueInGBA =[];
+    	var changableDiscForPlayer = [];
+    	var changableBoxLocationInGBA =[];
     	for(var i = 1; i < (8-containerCol); i ++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
     		if(gameBoardArray[containerRow][containerCol+i] !== playerValueInGBA && gameBoardArray[containerRow][containerCol+i] !== emty_splace){ // i =1
-       			// var changablediscForPlayer1 = [];
-       			changablediscForPlayer.push(boardTokenArray[containerRow][containerCol+i]);
-       			changableBoxValueInGBA.push(gameBoardArray[containerRow][containerCol+i]);
-                // if(gameBoardArray[containerRow][containerCol+i] !== player1_color_value_in_gameBoardArray){
-                // 	$(this).css("border-color",'pink');
-                console.log(changablediscForPlayer);
-                console.log(changableBoxValueInGBA);
-                // if(changablediscForPlayer1.length >0 && )
+       			changableDiscForPlayer.push(boardTokenArray[containerRow][containerCol+i]);
+                console.log(changableDiscForPlayer);
+                changableBoxLocationInGBA.push(containerRow);
+                changableBoxLocationInGBA.push(containerCol+i);
+               
                 }else{
-                	if(changablediscForPlayer.length >0 && gameBoardArray[containerRow][containerCol+i] === playerValueInGBA){
+                	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow][containerCol+i] === playerValueInGBA){
                 		$(element).css("border-color",'pink');
-                		makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
-                		for(var j = 0; j < changablediscForPlayer.length; j++){
-                			changablediscForPlayer[j].find('.transparent_disc').addClass(addClass).removeClass(removeClass);
+                		makeToken(playerColor).appendTo(element).off('click'); // place the disc of black color in the box;
+                		for(var j = 0; j < changableDiscForPlayer.length; j++){
+                			changableDiscForPlayer[j].find('.transparent_disc').addClass(addClass).removeClass(removeClass);
+                			console.log(changableBoxLocationInGBA);
+                			for(var z = 0; z < changableBoxLocationInGBA.length/2; z++){
+                				    var row = changableBoxLocationInGBA[z];
+                				    var col = changableBoxLocationInGBA[z+1];
+                				    changableBoxLocationInGBA.splice(0,2); 
+                				    z--;
 
+              						gameBoardArray[row][col] = playerValueInGBA
 
+              					    console.log(gameBoardArray)
+    						}
+    						gameBoardArray[containerRow][containerCol] = playerValueInGBA;	
                 		}
                 	
 
@@ -178,7 +158,45 @@ function horizontalRight(element, playerValueInGBA, playerColor,addClass, remove
     			return;
 
     		}
-    	
+    	}
+}
+
+function horizontalLeft(element, playerValueInGBA, playerColor,addClass, removeClass){ //GBA = gameBoardArray
+      	getConatinerRowAndCol(element);
+    	var changableDiscForPlayer = [];
+    	var changableBoxLocationInGBA =[];
+    	for(var i = 1; i < containerCol ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
+    		if(gameBoardArray[containerRow][containerCol-i] !== playerValueInGBA && gameBoardArray[containerRow][containerCol-i] !== emty_splace){ // i =1
+       			changableDiscForPlayer.push(boardTokenArray[containerRow][containerCol-i]);
+                changableBoxLocationInGBA.push(containerRow);
+                changableBoxLocationInGBA.push(containerCol-i);
+               
+                }else{
+                	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow][containerCol-i] === playerValueInGBA){
+                		$(element).css("border-color",'pink');
+                		makeToken(playerColor).appendTo(element).off('click'); // place the disc of black color in the box;
+                		for(var j = 0; j < changableDiscForPlayer.length; j++){
+                			changableDiscForPlayer[j].find('.transparent_disc').addClass(addClass).removeClass(removeClass);
+                			console.log(changableBoxLocationInGBA);
+                			for(var z = 0; z < changableBoxLocationInGBA.length/2; z++){
+                				    var row = changableBoxLocationInGBA[z];
+                				    var col = changableBoxLocationInGBA[z+1];
+                				    changableBoxLocationInGBA.splice(0,2); 
+                				    z--;
+
+              						gameBoardArray[row][col] = playerValueInGBA
+
+              					    console.log(gameBoardArray)
+    						}
+    						gameBoardArray[containerRow][containerCol] = playerValueInGBA;	
+                		}
+                	
+
+                	}
+    			//keep looking 
+    			return;
+
+    		}
     	}
 }
 
@@ -189,85 +207,24 @@ function horizontalRight(element, playerValueInGBA, playerColor,addClass, remove
 
 
 
-function box_click(element){ // box_click is when game stars.... element is the box that clicked 
-		if(clickTime % 2 === 0 && clickTime < 60){
-			boxRow = $(element).attr('row'); //element is the equail to this. which refer to the actually disc container that is clikced
-			boxCol = $(element).attr('col');
-			makeToken('black').appendTo(element);  // place the disc in black to the disc container 
-			clickTime++;
-			gameBoardArray[boxRow][boxCol] = 2;
-			$(element).off('click'); //disables click after black disc is formed 
-
-		}else{
-			if(clickTime < 60){
-			divNum = $(element).data('boxNumber');
-			makeToken('green').appendTo(element);
-			}
-			clickTime++;
-			gameBoardArray[boxRow][boxCol] = 1;	
-			$(element).off('click');        //disables click after white disc is formed
-		}
-	
-	// var disc = $(this).addClass('black');
-	// console.log(divNum);
-	console.log(gameBoardArray)
-}
-
-
-
-/// function to check for the color in player's turn; 
-function definePlayerTurn(){
-	if(clickTime % 2 === 0 && clickTime < 60){ //clickTime is equal to even 
-        // player 1 turn 
-        checkColorInPlayerTurn('black');
-
- 
-   }else {
-       // player 2 turn
-        checkColorInPlayerTurn('green');
-   }
-}
-
-
-function checkColorInPlayerTurn(color){
-	for(var r = 0; r < 8; r++){
-		for(var c = 0; c < 8; c++){
-			if(boardTokenArray[r][c].find('.transparent_disc').hasClass(color)){
-				containerRow = boardTokenArray[r][c].attr('row');  /// r =3; c =3; 
-				containerCol = boardTokenArray[r][c].attr('col');
-				checkBoxReliability();
-				return;
-				// look for boxs that are able to click. make a function that are 
-			}
-		}
-	}
-}
-
-function checkBoxReliability(){
-     currentBoxValue = gameBoardArray[containerRow][containerCol]; /// currentBoxValue =2;
-     ////////Horizontal check 
-     for(var i = containerCol ; i > 0; i--){ // i = 3, i > 0; i-- 3,2,1,0
-     var leftOfTheCurrentBox = gameBoardArray[containerRow][i-1]; //checking to the left   //2, 1, 0
-     var rightOfTheCurrentBox = gameBoardArray[containerRow][i+1]; // checking to the right 
-          if(leftOfTheCurrentBox !== currentBoxValue && leftOfTheCurrentBox !== 0){
-          	
-
-              // leftOfTheCurrentBox = gameBoardArray[containerRow][i-1];
-              // console.log(leftOfTheCurrentBox);
-         
-          }else{
-          	return;
-          }
-     }
 
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////
-function horizontalClickRight(){
+// function horizontalClickRight(){
       
 
 	// for( var rowIndex=0 ; rowIndex < 8; rowIndex++){ // index = 0 
@@ -296,7 +253,7 @@ function horizontalClickRight(){
  //        }
       
 	// }
-}
+// }
 
 //////////////////////////////////////////////////////////////////
 // function switchColor(){
