@@ -361,7 +361,9 @@ button{
   }
 }
 
-.winText {
+
+
+/*.winText {
     /* display: none; */
     height: 80%;
     width: 80%;
@@ -372,8 +374,8 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
-
-}
+/*
+}*/
 
 .winText p {
 

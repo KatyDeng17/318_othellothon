@@ -145,7 +145,7 @@ function horizontalRight(element, playerValueInGBA, playerColor,addClass, remove
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow][containerCol+i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){ // element = this; if things inside the box is not 0, 
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
@@ -190,7 +190,7 @@ function horizontalLeft(element, playerValueInGBA, playerColor,addClass, removeC
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow][containerCol-i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
@@ -236,7 +236,7 @@ function verticalUp(element, playerValueInGBA, playerColor,addClass, removeClass
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow-i][containerCol] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
@@ -283,7 +283,7 @@ function verticalDown(element, playerValueInGBA, playerColor,addClass, removeCla
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow+i][containerCol] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element); // place the disc of black color in the box;
@@ -330,7 +330,7 @@ function diagonalNE(element, playerValueInGBA, playerColor,addClass, removeClass
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow-i][containerCol+i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element)// place the disc of black color in the box;
@@ -376,7 +376,7 @@ function diagonalSW(element, playerValueInGBA, playerColor,addClass, removeClass
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow+i][containerCol-i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element).off('click'); // place the disc of black color in the box;
@@ -422,7 +422,7 @@ function diagonalNW(element, playerValueInGBA, playerColor,addClass, removeClass
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow-i][containerCol-i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element).off('click'); // place the disc of black color in the box;
@@ -468,7 +468,7 @@ function diagonalSE(element, playerValueInGBA, playerColor,addClass, removeClass
                
                 }else{
                 	if(changableDiscForPlayer.length > 0 && gameBoardArray[containerRow+i][containerCol+i] === playerValueInGBA){
-                		$(element).css("border-color",'pink');
+                		// $(element).css("border-color",'pink');
                 		if(!$(element).children().length){
                 			// console.log($(element).children());
                 		    makeToken(playerColor).appendTo(element).off('click'); // place the disc of black color in the box;
@@ -553,7 +553,8 @@ countEmtySplace;
 
 }
 
-
+$('.playerOne').find('.score').text(player1Count);
+$('.playerTwo').find('.score').text(player2Count);
 
 
 
