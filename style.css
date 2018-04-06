@@ -12,6 +12,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 
@@ -65,8 +66,6 @@ body {
     margin: 0;
     display: flex;
     flex-flow: row wrap;
-    border:  1px solid #FFFF99; 
-    background:white; 
     background: linear-gradient( rgb(253,222,63), white);
 }
 
@@ -79,28 +78,34 @@ body {
     position: relative;
 }
 
+.disc_container:hover{
+    border: solid yellow 3px;
+}
+
 .transparent_disc{
-    width: 70%;
-    height: 70%; 
-    background-color: pink;
-    border-radius: 100%;
+    height:70px;
+    width:70px;
     margin: 0;	
     position: absolute;
-    bottom: 12px;
-    left: 21px;
+    bottom: -1px;
+    left: 10px;
 }
 
 
 .black{
-    background-color: black; 
     background-image: url('gudetama/gudetamaToast.png');  
+    background-size:200%;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .green{
-    background-color: green; 
-    background-size: 40%;
+
+    background-image: url('gudetama/gudetamaVector.png');
+    background-size: 60%;
     background-repeat:no-repeat;
     background-position:center;
+    z-index:0;
 }
 
 .scoreArea{
@@ -155,7 +160,7 @@ body {
 
 .playerPicOneImg {
     height: 90%;
-    filter:
+    filter: blur(1px);
 }
 
 .playerTwo{
@@ -362,24 +367,29 @@ button{
 }
 
 
-
-/*.winText {
-    /* display: none; */
-    height: 80%;
-    width: 80%;
+.winText {
+    display: none;
+    height: 50%;
+    width: 50%;
     position: fixed;
-    background-color: grey;
     text-align: center;
     margin: auto;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    position: absolute;
+}
+
+.playerVictor {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
-/*
-}*/
+} 
 
-.winText p {
-
+.winText img {
+    width: 100%;
 }
+
 
 
 
