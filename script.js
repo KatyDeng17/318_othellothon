@@ -12,7 +12,11 @@ var clickTime = 0;// how many times that can click
 var playerTurn;
 var containerCol; 
 var containerRow;
-var currentBoxLocationInGameBoardArray; 
+var player1Count;
+var player2Count;
+var countEmtySplace;
+
+
 
 
 
@@ -60,6 +64,11 @@ function create_board(){
     gameBoardArray[4][3] = player2_color_value_in_gameBoardArray;//1
   	console.log(gameBoardArray);
 
+// testing 
+   //  makeToken(player2_color ).appendTo('#31');
+   //  gameBoardArray[4][6] = player2_color_value_in_gameBoardArray;//1
+  	// console.log(gameBoardArray);
+
 }
 //step 2 making the disc with class disc and class color; and disable all the boxs to click.
 function makeToken(playerColor){
@@ -80,9 +89,12 @@ function player_turn(){
 
 //step 4 mouseover the disc container of player choice; 
 function boxClick(){
+	// countDisc()
     player_turn()// findout the player turn; 
+    // countDisc()
     if(playerTurn === 'player1'){
     	///step 5
+    
     	horizontalRight(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
     	horizontalLeft(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
     	verticalUp(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
@@ -91,10 +103,12 @@ function boxClick(){
     	diagonalSW(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
     	diagonalNW(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
     	diagonalSE(this, player1_color_value_in_gameBoardArray, player1_color,'black', 'green');
+    	countDisc()
     
 
     }else{
       playerTurn === 'player2'
+      		
           	horizontalRight(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
           	horizontalLeft(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
           	verticalUp(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
@@ -103,8 +117,10 @@ function boxClick(){
           	diagonalSW(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
           	diagonalNW(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black');
           	diagonalSE(this, player2_color_value_in_gameBoardArray, player2_color,'green', 'black'); 
+          	countDisc()
 
     }
+    // countDisc();
 }
 //step 5
 function getConatinerRowAndCol(element){
@@ -113,6 +129,8 @@ function getConatinerRowAndCol(element){
 
 }
 //step 6
+
+
 
 function horizontalRight(element, playerValueInGBA, playerColor,addClass, removeClass){ //GBA = gameBoardArray
       	getConatinerRowAndCol(element);
@@ -485,6 +503,55 @@ function diagonalSE(element, playerValueInGBA, playerColor,addClass, removeClass
 }
 
 
+
+
+function countDisc(){
+	player1Count = 0;
+	player2Count = 0;
+	countEmtySplace =0;
+	for(var r = 0; r < 8; r++ ){
+	for(var c = 0; c < 8; c++){
+      if(gameBoardArray[r][c] == 0){
+
+           player1Count++;
+      }else if(gameBoardArray[r][c] === 1){
+      	   player2Count++;
+      }else{
+      	countEmtySplace++;
+      }
+
+		}
+ 	}
+}
+
+function gameCompleted(){
+	if(countEmtySplace === 0 & player1Count > player2Coun){
+		//player 1 won 
+		
+	}else{
+		//player 2 won; 
+	}
+}
+
+function reset(){
+gameBoardArray = [];//2d array to store the disc containter value . 2 means emty, 0 means player1 color ; 1 means player2 color 
+boardTokenArray = []; // 2d array that store the all <div> s teg of the class disc_container. 
+player1_color_value_in_gameBoardArray = 0;
+player1_color = 'black';
+player2_color = 'green';
+player2_color_value_in_gameBoardArray = 1; 
+emty_splace = 2;
+divNum; // the number that represents the disc_container  
+boxNum = 0; // num that on the box
+clickTime = 0;// how many times that can click 
+playerTurn;
+containerCol; 
+containerRow;
+player1Count;
+player2Count;
+countEmtySplace;
+
+}
 
 
 
