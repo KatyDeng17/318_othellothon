@@ -24,6 +24,7 @@ function intiApp(){
 	//step1 create a 8x8 board; 
 	create_board();
 	$('.disc_container').click(boxClick);
+	//winModal();
 }
 //step 1: 
 function create_board(){
@@ -556,7 +557,8 @@ countEmtySplace;
 
 
 
-
+$('.playerOne').find('.score').text(player1Count);
+$('.playerTwo').find('.score').text(player2Count);
 
 
 
