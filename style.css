@@ -12,6 +12,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 
@@ -159,7 +160,7 @@ body {
 
 .playerPicOneImg {
     height: 90%;
-    filter:
+    filter: blur(1px);
 }
 
 .playerTwo{
@@ -366,22 +367,29 @@ button{
 }
 
 .winText {
-    /* display: none; */
-    height: 80%;
-    width: 80%;
+    display: none;
+    height: 50%;
+    width: 50%;
     position: fixed;
-    background-color: grey;
     text-align: center;
     margin: auto;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    position: absolute;
+}
+
+.playerVictor {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+} 
+
+.winText img {
+    width: 100%;
 
 }
 
-.winText p {
-
-}
 
 
 

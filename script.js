@@ -525,7 +525,7 @@ function countDisc(){
 }
 
 function gameCompleted(){
-	if(countEmtySplace === 0 & player1Count > player2Coun){
+	if(countEmtySplace === 0 & player1Count > player2Count){
 		//player 1 won 
 		
 	}else{
@@ -581,13 +581,14 @@ function winModal() {
 	$('.eggContainer').append(eggLoader);
 	
 	var playerWon;
-	if (clickTime % 2) {
+	if (countEmtySplace === 0 & player1Count > player2Count) {
 		playerWon = 'Player 1 wins!'
 	} else {
 		playerWon = 'Player 2 wins!'
 	}
 	setTimeout(function() {
-		$('.winText').css('display', 'block').text(playerWon);
+		$('.winText').css("display", 'block');
+		$('.playerVictor').text("You won");
 	}, 4000)
 }
 
