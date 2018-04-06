@@ -568,3 +568,26 @@ countEmtySplace;
 
 
 //////////////////////////////////////////////////////////////////////////
+
+
+function winModal() {
+	var eggLoader = $('<div>').addClass('loader');
+
+	for(var i=0; i<=28; i++) {
+		var image = $('<div>');
+		eggLoader.append(image);
+	}
+
+	$('.eggContainer').append(eggLoader);
+	
+	var playerWon;
+	if (clickTime % 2) {
+		playerWon = 'Player 1 wins!'
+	} else {
+		playerWon = 'Player 2 wins!'
+	}
+	setTimeout(function() {
+		$('.winText').css('display', 'block').text(playerWon);
+	}, 4000)
+}
+
