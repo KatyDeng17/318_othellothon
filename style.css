@@ -75,20 +75,23 @@ body {
     border: solid 2px black;
     border-radius:10%;
     display: flex;
-    position: relative;
+    /*position: relative;*/
+    justify-content: center;
+    align-items: center;
+    color: transparent;
 }
 
-.disc_container:hover{
+/*.disc_container:hover{
     border: solid yellow 3px;
-}
+}*/
 
 .transparent_disc{
-    height:70px;
-    width:70px;
+    height:90px;
+    width:90px;
     margin: 0;	
-    position: absolute;
+    /*position: absolute;*/
     bottom: -1px;
-    left: 10px;
+    left: 15px;
 }
 
 
@@ -100,7 +103,6 @@ body {
 }
 
 .green{
-
     background-image: url('gudetama/gudetamaVector.png');
     background-size: 60%;
     background-repeat:no-repeat;
@@ -160,7 +162,7 @@ body {
 
 .playerPicOneImg {
     height: 90%;
-    filter: blur(1px);
+    
 }
 
 .playerTwo{
@@ -265,6 +267,7 @@ button{
 	top:0px;
 	width:100%;
 	height:100%;
+    display:none;
 	position:absolute;
 	left:0%;
 }
