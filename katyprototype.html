@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reveersi game testing </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src='main.js'></script> -->
+  <script type="text/javascript" src='script.js'></script>
+	<style type="text/css">
+		*{
+			margin: 0; 
+			padding: 0;
+		}
+		#game-area{
+			width: 902px; 
+			height: 900px; 
+			border:  1px solid black; 
+			box-sizing: border-box;
+			position: relative;
+			left: 30%;
+
+		}
+		.disc_container{
+			position: relative;
+			width: 12.5%; 
+			height: 12.5%;
+			border: 1px solid blue; 
+			display: block;
+			float: left;
+			box-sizing: border-box;
+			/*color:white;*/
+		}
+		.transparent_disc{
+			position: relative;
+			width: 70%;
+			height: 70%; 
+			background-color: pink;
+			border-radius: 100%;
+			margin: auto;	
+
+		}
+		.black{
+			background-color: black;
+		}
+		.green{
+			background-color: green;
+		}
+
+
+
+
+
+	</style>
+</head>
+<body>
+<div id="game-area">
+<!--   <div class="disc_container" data-box-number = '1'>1</div>
+  <div class="disc_container" data-box-number = '2'>2</div>
+  <div class="disc_container" data-box-number = '3'>3</div>
+  <div class="disc_container" data-box-number = '4'>4</div>
+  <div class="disc_container" data-box-number = '5'>5</div>
+  <div class="disc_container" data-box-number = '6'>6</div>
+  <div class="disc_container" data-box-number = '7'>7</div>
+  <div class="disc_container" data-box-number = '8'>8</div>
+  <div class="disc_container" data-box-number = '9'>9</div>
+  <div class="disc_container" data-box-number = '10'>10</div>
+  <div class="disc_container" data-box-number = '11'>11</div>
+  <div class="disc_container" data-box-number = '12'>12</div>
+  <div class="disc_container" data-box-number = '13'>13</div>
+  <div class="disc_container" data-box-number = '14'>14</div>
+  <div class="disc_container" data-box-number = '15'>15</div>
+  <div class="disc_container" data-box-number = '16'>16</div>
+  <div class="disc_container" data-box-number = '17'>17</div>
+  <div class="disc_container" data-box-number = '18'>18</div>
+  <div class="disc_container" data-box-number = '19'>19</div>
+  <div class="disc_container" data-box-number = '20'>20</div>
+  <div class="disc_container" data-box-number = '21'>21</div>
+  <div class="disc_container" data-box-number = '22'>22</div>
+  <div class="disc_container" data-box-number = '23'>23</div>
+  <div class="disc_container" data-box-number = '24'>24</div>
+  <div class="disc_container" data-box-number = '25'>25</div>
+  <div class="disc_container" data-box-number = '26'>26</div>
+  <div class="disc_container" data-box-number = '27'>27</div>
+  <div class="disc_container" data-box-number = '28'>28</div>
+  <div class="disc_container" data-box-number = '29'>29</div>
+  <div class="disc_container" data-box-number = '30'>30</div>
+  <div class="disc_container" data-box-number = '31'>31</div>
+  <div class="disc_container" data-box-number = '32'>32</div>
+  <div class="disc_container" data-box-number = '33'>33</div>
+  <div class="disc_container" data-box-number = '34'>34</div>
+  <div class="disc_container" data-box-number = '35'>35</div>
+  <div class="disc_container" data-box-number = '36'>36</div>
+  <div class="disc_container" data-box-number = '37'>37</div>
+  <div class="disc_container" data-box-number = '38'>38</div>
+  <div class="disc_container" data-box-number = '39'>39</div>
+  <div class="disc_container" data-box-number = '40'>40</div>
+  <div class="disc_container" data-box-number = '41'>41</div>
+  <div class="disc_container" data-box-number = '42'>42</div>
+  <div class="disc_container" data-box-number = '43'>43</div>
+  <div class="disc_container" data-box-number = '44'>44</div>
+  <div class="disc_container" data-box-number = '45'>45</div>
+  <div class="disc_container" data-box-number = '46'>46</div>
+  <div class="disc_container" data-box-number = '47'>47</div>
+  <div class="disc_container" data-box-number = '48'>48</div>
+  <div class="disc_container" data-box-number = '49'>49</div>
+  <div class="disc_container" data-box-number = '50'>50</div>
+  <div class="disc_container" data-box-number = '51'>51</div>
+  <div class="disc_container" data-box-number = '52'>52</div>
+  <div class="disc_container" data-box-number = '53'>53</div>
+  <div class="disc_container" data-box-number = '54'>54</div>
+  <div class="disc_container" data-box-number = '55'>55</div>
+  <div class="disc_container" data-box-number = '56'>56</div>
+  <div class="disc_container" data-box-number = '57'>57</div>
+  <div class="disc_container" data-box-number = '58'>58</div>
+  <div class="disc_container" data-box-number = '59'>59</div>
+  <div class="disc_container" data-box-number = '60'>60</div>
+  <div class="disc_container" data-box-number = '61'>61</div>
+  <div class="disc_container" data-box-number = '62'>62</div>
+  <div class="disc_container" data-box-number = '63'>63</div>
+  <div class="disc_container" data-box-number = '64'>64</div> -->
+
+</div>
+
+</body>
+</html>

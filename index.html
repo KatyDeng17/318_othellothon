@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Rilakkuma Reversi</title>
+</head>
+<body>
+   <div class="header"> 
+       <div class="firstTitle">Gudetama</div>
+        <div class="secondTitle">Reversi !</div>
+    </div>
+    <div class="gameSpace">
+        <div class="scoreArea">
+            <div class="playerTurn">
+                    <div class="playerUp">CURRENT PLAYER:</div>
+                <div class="playerImg"></div>
+                <!-- <div class="playerUp">CURRENT PLAYER:</div> -->
+            </div>
+            <div class="playerOne">PLAYER 1 SCORE:
+                <div class="playerPicOne">
+                    <img class="playerPicOneImg"src="gudetama/gudetamaVector.png" alt="gudetama player">
+                </div>
+                <div class="score"></div>
+            </div>
+            <div class="playerTwo">PLAYER 2 SCORE:
+                <div class="playerPicTwo"></div>
+                <div class="score"></div>
+            </div>
+            <div class=resetSpace>
+                    <button>Reset</button>
+            </div>
+        </div>
+        <div class="gameBoardArea">
+            <div id="game-area"></div>
+        </div> 
+   </div>
+   <div class="eggContainer"></div>
+   <div class="winText">
+       <div class="playerVictor">
+           
+       </div>
+        <img src="gudetama/whateverGudetama.jpg" alt="Whatever Gudetama, You Win!">
+   </div>
+
+</body>
+</html>
