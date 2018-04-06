@@ -24,14 +24,14 @@ body {
     padding-top:1.5em;
     font-family:"comfortaa";
     font-style: bold;
-    font-size: 10em;
+    font-size: 3em;
     color:black;
     text-align: center;
     background-image: url(gudetama/gudetamaWall.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    box-shadow: slategrey 20px 30px;
+    box-shadow: slategrey 20px 15px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,8 @@ body {
     
 .gameBoardArea {
     height: 100%;
-    width:80%;
-    display:flex;
+    width: 80%;
+    display: flex;
     justify-content: center;
     align-items: center;
    
@@ -86,133 +86,168 @@ body {
     border-radius: 100%;
     margin: 0;	
     position: absolute;
-    left: 64px;
+    bottom: 12px;
+    left: 21px;
 }
 
 
 .black{
-background-color: black; 
-background-image: url('gudetama/gudetamaToast.png');  
+    background-color: black; 
+    background-image: url('gudetama/gudetamaToast.png');  
 }
 
 .green{
-background-color: green; 
-background-size: 40%;
-background-repeat:no-repeat;
-background-position:center;
+    background-color: green; 
+    background-size: 40%;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .scoreArea{
-    height:100%;
-    width:20%;
-    display:flex;
-    flex-direction:column;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
 }
 
 .playerTurn{
-height:30%;
-width:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items: center;
+    margin-top: 7.5%;
+    height: 25%;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
 }
 
 .playerImg{
-border: black 8px solid;
-height:70%;
-width:80%;
-border-radius:10%;
-font-family:"comfortaa";
-box-shadow: slategrey 5px 10px;;
+    border: black 4px solid;
+    height:70%;
+    width:80%;
+    border-radius:10%;
+    font-family:"comfortaa";
+    box-shadow: slategrey 5px 10px;
 }
 
 .playerUp{
-height:20%;
-width:80%;
-text-align: center;
-font-family:"comfortaa";
-font-size: 5em;
+    height:20%;
+    width:80%;
+    text-align: center;
+    font-family:"comfortaa";
+    font-size: 1em;
+    padding-top:2px;
+    align-items: center;
+    text-align: center;
 }
 
 .playerOne{
-height:30%;
-width:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items: center;
+    height:25%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    font-family:"comfortaa";
+}
+
+
+.playerPicOneImg {
+    height: 90%;
+    filter:
 }
 
 .playerTwo{
-height:30%;
-width:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items: center;
+    height:25%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    font-family:"comfortaa";
 }
 
 .playerPicOne{
-border: black 8px solid;
-border-radius:10%;
-height:70%;
-width:80%;
-background-image: url('gudetama/gudetamaVector.png');
-background-repeat: no-repeat;
-background-position: center;
-background-size: 40%;
-box-shadow: slategrey 5px 10px;;
+    border: black 4px solid;
+    border-radius:10%;
+    height:70%;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url('gudetama/gudetamaVector.png');
+    background-repeat: no-repeat;
+    background-position: center; */
+    background-size: 38%;
+    box-shadow: slategrey 5px 10px;
 }
 
 .playerPicTwo{
-border: black 8px solid;
-border-radius:10%;
-height:70%;
-width:80%;
-background-image: url('gudetama/gudetamaToast.png');  
-background-repeat: no-repeat;
-background-position: center;  
-background-size: 100%;
-box-shadow: slategrey 5px 10px;;
+    border: black 4px solid;
+    border-radius:10%;
+    height:70%;
+    width:80%;
+    background-image: url('gudetama/gudetamaToast.png');  
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-size: 100%;
+    box-shadow: slategrey 5px 10px;;
 }
 
 .score{
-height:20%;
-width:80%;
-text-align: center;
-font-size: 5em;
-font-family:"comfortaa";
+    height:20%;
+    width:80%;
+    text-align: center;
+    font-size: 1em;
+    font-family:"comfortaa";
+    font-size:2em
 
 }
 
 .resetSpace{
-height:10%;
-width:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items: center;
+    height: 20%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+
+button:hover {
+    box-shadow: slategrey 10px 15px 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button:active{
+    box-shadow: slategrey 5px 5px;
+    transition: all .3s;
+}
+
+button:focus {
+    outline: none;
 }
 
 .resetSpace:hover{
-padding-top:5px;
-padding-bottom:5px;
+    /* box-shadow: slategrey 10px 10px; */
+    /* padding-top:-8px;
+    margin-bottom:8px; */
 }
 
 button{
-height: 50%;
-width:50%;
-border-radius: 5%;
-font-family:"comfortaa";
-font-size: 5em;
-color: black;
-border: black 8px solid;
-border-radius:10%;
-box-shadow: slategrey 5px 10px;
+    height: 50%;
+    width:50%;
+    border-radius: 5%;
+    font-family:"comfortaa";
+    font-size: 1em;
+    color: black;
+    border: black 3px solid;
+    border-radius:10%;
+    box-shadow: slategrey 5px 10px;
 }
-
-
 
 @font-face {
     font-family: "comfortaa";
