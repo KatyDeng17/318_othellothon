@@ -369,6 +369,7 @@ button{
   }
 }
 
+
 .winText {
     display: none;
     height: 50%;
@@ -390,7 +391,6 @@ button{
 
 .winText img {
     width: 100%;
-
 }
 
 
