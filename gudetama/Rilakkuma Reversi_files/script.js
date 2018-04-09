@@ -24,21 +24,17 @@ function intiApp(){
 	//step1 create a 8x8 board; 
 	create_board();
 	$('.disc_container').click(boxClick);
-    $('#28').off('click');
-    $('#37').off('click');
-    $('#29').off('click');
-    $('#36').off('click');
 	//winModal();
 }
 
-//step 1: function that creating the 8X8 game board 
+//step 1: 
 function create_board(){
 	for(var row = 0; row < 8; row++ ){
-		var game_board_row  = [];
+		var nestedArrSet  = [];
 		boardTokenArray[row] = [];
-        gameBoardArray.push(game_board_row);
+        gameBoardArray.push(nestedArrSet);
 		for(var col = 0; col < 8; col++){
-			game_board_row.push(emty_splace);
+			nestedArrSet.push(emty_splace);
 			boxNum ++;
 			var disc_container = $('<div>', {
 				class: 'disc_container', 
@@ -47,8 +43,8 @@ function create_board(){
 					col: col    // col location of the disc container
 				},
 				id: boxNum 
-			}).appendTo('#game-area')    ;
-			// disc_container.text(boxNum);
+			}).appendTo('#game-area').data('boxNumber', boxNum );
+			disc_container.text(boxNum);
 			disc_container.off('click')
 			boardTokenArray[row][col] = disc_container;
 			// console.log(boardTokenArray);
@@ -69,6 +65,11 @@ function create_board(){
     makeToken(player2_color ).appendTo('#36');
     gameBoardArray[4][3] = player2_color_value_in_gameBoardArray;//1
   	console.log(gameBoardArray);
+
+// testing 
+   //  makeToken(player2_color ).appendTo('#31');
+   //  gameBoardArray[4][6] = player2_color_value_in_gameBoardArray;//1
+  	// console.log(gameBoardArray);
 
 }
 //step 2 making the disc with class disc and class color; and disable all the boxs to click.
@@ -131,6 +132,8 @@ function getConatinerRowAndCol(element){
 }
 //step 6
 
+
+
 function horizontalRight(element, playerValueInGBA, playerColor,addClass, removeClass){ //GBA = gameBoardArray
       	getConatinerRowAndCol(element);
     	var changableDiscForPlayer = [];
@@ -181,7 +184,7 @@ function horizontalLeft(element, playerValueInGBA, playerColor,addClass, removeC
       	getConatinerRowAndCol(element);
     	var changableDiscForPlayer = [];
     	var changableBoxLocationInGBA =[];
-    	for(var i = 1; i < containerCol+1 ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
+    	for(var i = 1; i < containerCol ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
     		if(gameBoardArray[containerRow][containerCol-i] !== playerValueInGBA && gameBoardArray[containerRow][containerCol-i] !== emty_splace){ // i =1
        			changableDiscForPlayer.push(boardTokenArray[containerRow][containerCol-i]);
                 changableBoxLocationInGBA.push(containerRow);
@@ -227,7 +230,7 @@ function verticalUp(element, playerValueInGBA, playerColor,addClass, removeClass
       	getConatinerRowAndCol(element);
     	var changableDiscForPlayer = [];
     	var changableBoxLocationInGBA =[];
-    	for(var i = 1; i < containerRow+1 ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
+    	for(var i = 1; i < containerRow ; i++){ //if containerCol = 3; i < 3 next box will be 4; 5, 6, 7
     		if(gameBoardArray[containerRow-i][containerCol] !== playerValueInGBA && gameBoardArray[containerRow-i][containerCol] !== emty_splace){ // i =1
        			changableDiscForPlayer.push(boardTokenArray[containerRow-i][containerCol]);
                 changableBoxLocationInGBA.push(containerRow-i);
@@ -532,7 +535,15 @@ function gameCompleted(){
 	}
 }
 
+function reset(){
 
+}
+
+
+
+
+$('.playerOne').find('.score').text(player1Count);
+$('.playerTwo').find('.score').text(player2Count);
 
 
 
