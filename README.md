@@ -11,38 +11,11 @@ Scope:
   - Must be able to flip the tokens based upon square placement
   - players must be able to choose which symbol they use.
  
- 
-Mystery requirement: 
-- <b>COMING SOON!</b>
 
-#### Team 1
-- Jean Paul
-- Sasan
-- Daniel
-
-#### Team 2
-- Brett
-- Omer
-- Dylan
-
-#### Team 3
-- Alia
-- Andrew
-- Sam
 
 #### Team 4
 - Bora
 - Katy
 - Christina
-
-#### Team 5
-- Harrison
-- Keith
-- Dona
-
-#### Team 6
-- Hanh
-- Mark
-- Corey
 
 
